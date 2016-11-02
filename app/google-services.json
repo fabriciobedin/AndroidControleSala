@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "587803273779",
+    "firebase_url": "https://controle-sala.firebaseio.com",
+    "project_id": "controle-sala",
+    "storage_bucket": "controle-sala.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587803273779:android:0815d90191bd45f3",
+        "android_client_info": {
+          "package_name": "io.github.fabriciobedin.controlesala"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587803273779-eav7n6j6sh9u6l95ah6ifa7hmhp76ur2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.github.fabriciobedin.controlesala",
+            "certificate_hash": "C0959F4F14E6C2BD4DF556931AB0D0E0EFF64182"
+          }
+        },
+        {
+          "client_id": "587803273779-h2e85tt1t0gofk35g00k14ddl1c7fmo6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcGz7rAGIMlz1ei3y8lF_LopsvkSdtd6o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "587803273779-h2e85tt1t0gofk35g00k14ddl1c7fmo6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
