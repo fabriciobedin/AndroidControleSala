@@ -1,17 +1,626 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="io.github.fabriciobedin.controlesala.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+        android:background="#555"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llsensorl1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_desc_sensor_luz"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Luz da Sala"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorTextSensor"
+                />
+
+            <!-- apenas o traço de cor pra serparar !-->
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height= "match_parent"
+                android:background="@color/colorDivisoriasEmCima"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_desc_sensor_temperatura"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Temperatura"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorTextSensor"
+
+                />
+
+            <!-- apenas o traço de cor pra serparar !-->
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height= "match_parent"
+                android:background="@color/colorDivisoriasEmCima"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_desc_sensor_umidade"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Umidade"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorTextSensor"
+
+                />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llsensorl2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_sensor_luz"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text=""
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorTextSensor"
+                />
+
+            <!-- apenas o traço de cor pra serparar !-->
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height= "match_parent"
+                android:background="@color/colorDivisoriasEmCima"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_sensor_temperatura"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text=""
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorTextSensor"
+
+                />
+            <!-- apenas o traço de cor pra serparar !-->
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height= "match_parent"
+                android:background="@color/colorDivisoriasEmCima"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_sensor_umidade"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text=""
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorTextSensor"
+
+                />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llsensorl3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_obs_sensor_luz"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="( ligada = ~40 )"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_desc_sensor"
+                android:textColor="@color/colorTextSensor"
+                />
+
+            <!-- apenas o traço de cor pra serparar !-->
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height= "match_parent"
+                android:background="@color/colorDivisoriasEmCima"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_obs_sensor_temperatura"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="ºC"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_desc_sensor"
+                android:textColor="@color/colorTextSensor"
+
+                />
+            <!-- apenas o traço de cor pra serparar !-->
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height= "match_parent"
+                android:background="@color/colorDivisoriasEmCima"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_obs_sensor_umidade"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text=""
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_desc_sensor"
+                android:textColor="@color/colorTextSensor"
+
+                />
+
+
+        </LinearLayout>
+
+        <!-- apenas o traço de cor pra serparar !-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height= "2dp"
+            android:background="@color/colorDivisoriasEmCima"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llsensorl4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_desc_sensor_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Sensor 4"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorTextSensor"
+                />
+
+            <!-- apenas o traço de cor pra serparar !-->
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height= "match_parent"
+                android:background="@color/colorDivisoriasEmCima"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_desc_sensor_5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Sensor 5"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorTextSensor"
+
+                />
+
+            <!-- apenas o traço de cor pra serparar !-->
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height= "match_parent"
+                android:background="@color/colorDivisoriasEmCima"
+                android:orientation="vertical">
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/txt_desc_sensor_6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Sensor 6"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorTextSensor"
+
+                />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llsensorl5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_sensor_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text=""
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorTextSensor"
+                />
+
+            <!-- apenas o traço de cor pra serparar !-->
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height= "match_parent"
+                android:background="@color/colorDivisoriasEmCima"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_sensor_5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text=""
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorTextSensor"
+
+                />
+
+            <!-- apenas o traço de cor pra serparar !-->
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height= "match_parent"
+                android:background="@color/colorDivisoriasEmCima"
+                android:orientation="vertical">
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/txt_sensor_6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text=""
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorTextSensor"
+
+                />
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llsensorl6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_obs_sensor_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text=""
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_desc_sensor"
+                android:textColor="@color/colorTextSensor"
+                />
+
+            <!-- apenas o traço de cor pra serparar !-->
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height= "match_parent"
+                android:background="@color/colorDivisoriasEmCima"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_obs_sensor_5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text=""
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_desc_sensor"
+                android:textColor="@color/colorTextSensor"
+
+                />
+            <!-- apenas o traço de cor pra serparar !-->
+            <LinearLayout
+                android:layout_width="2dp"
+                android:layout_height= "match_parent"
+                android:background="@color/colorDivisoriasEmCima"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_obs_sensor_6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text=""
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_desc_sensor"
+                android:textColor="@color/colorTextSensor"
+
+                />
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llfuncoes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:background="#ccc"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:id="@+id/llbt1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Luz da Sala"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorFuncoes"
+                 />
+
+            <ToggleButton
+                android:text="ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/bt_1_luz"
+                android:layout_weight="0.5" />
+
+
+
+        </LinearLayout>
+
+        <!-- apenas o traço de cor pra serparar !-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height= "2dp"
+            android:background="@color/colorDivisoriasEmBaixo"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llbt2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/bt_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Climatizador"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorFuncoes"
+                />
+
+            <ToggleButton
+                android:text="ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/toggleButton2"
+                android:layout_weight="0.5" />
+
+        </LinearLayout>
+
+        <!-- apenas o traço de cor pra serparar !-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height= "2dp"
+            android:background="@color/colorDivisoriasEmBaixo"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llbt3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/bt_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Servidor GPrint"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorFuncoes"
+                 />
+
+            <ToggleButton
+                android:text="ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/toggleButton3"
+                android:layout_weight="0.5" />
+
+        </LinearLayout>
+
+        <!-- apenas o traço de cor pra serparar !-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height= "2dp"
+            android:background="@color/colorDivisoriasEmBaixo"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llbt4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/bt_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="PC Fabricio"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorFuncoes"
+                />
+
+            <ToggleButton
+                android:text="ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/toggleButton4"
+                android:layout_weight="0.5" />
+
+        </LinearLayout>
+
+        <!-- apenas o traço de cor pra serparar !-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height= "2dp"
+            android:background="@color/colorDivisoriasEmBaixo"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llbt5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/bt_5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Servidor Sophos"
+                android:background="@null"
+                android:gravity="center"
+                android:textSize="@dimen/activity_texto_funcoes"
+                android:textColor="@color/colorFuncoes"
+                />
+
+            <ToggleButton
+                android:text="ToggleButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/toggleButton5"
+                android:layout_weight="0.5" />
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
