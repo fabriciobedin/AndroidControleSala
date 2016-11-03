@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     ToggleButton btSensor1Luz;
     float lightValue = 0;
     int btnValue;
-    boolean retornoLuz;
+    boolean retornoLuz = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,11 +109,11 @@ public class MainActivity extends AppCompatActivity {
                 if (databaseError != null){
                     Log.e("FIREBASE", "msg error: " + databaseError.getMessage());
                 } else {
-                    if (valor == 1){
-                        Toast.makeText(getApplicationContext(), "Ligando a Luz...", Toast.LENGTH_SHORT).show();
-                    }else {
-                        Toast.makeText(getApplicationContext(), "Desligando a Luz...", Toast.LENGTH_SHORT).show();
-                    }
+//                    if (valor == 1){
+//                        Toast.makeText(getApplicationContext(), "Ligando a Luz...", Toast.LENGTH_SHORT).show();
+//                    }else {
+//                        Toast.makeText(getApplicationContext(), "Desligando a Luz...", Toast.LENGTH_SHORT).show();
+//                    }
 
                 }
             }
