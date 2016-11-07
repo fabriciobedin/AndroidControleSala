@@ -18,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
     TextView txtSensorTemperatura;
     ToggleButton btSensor1Luz;
     float lightValue = 0;
-    int btnValue;
-    boolean retornoLuz = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +39,6 @@ public class MainActivity extends AppCompatActivity {
                         lightValue = Float.parseFloat(""+data.getValue());
                         lightValue = lightValue*100;
                         txtSensorLuz.setText(""+lightValue);
-
-//                        if (lightValue > 26){
-//                            mudaValorLuz(1);
-//                        }else{
-//                            mudaValorLuz(0);
-//                        }
                     }
                 }
             }
@@ -58,11 +50,31 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        if(verificaSeLuzEstaLigada()){
-            btSensor1Luz.setChecked(true);
-        } else {
-            btSensor1Luz.setChecked(false);
-        }
+        //entra apenas uma vez
+        ControlLifeCicleApp.sensorLuz.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if(dataSnapshot.getChildrenCount()>0){
+                    for(DataSnapshot data : dataSnapshot.getChildren()){
+                        lightValue = Float.parseFloat(""+data.getValue());
+                        lightValue = lightValue*100;
+                        if (lightValue > 26){
+                            btSensor1Luz.setChecked(true);
+                        }else{
+                            btSensor1Luz.setChecked(false);
+                        }
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
 
         btSensor1Luz.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -76,33 +88,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public boolean verificaSeLuzEstaLigada (){
-
-        ControlLifeCicleApp.ligaLuz.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                if(dataSnapshot.getChildrenCount()>=0){
-                    for(DataSnapshot data : dataSnapshot.getChildren()){
-                        btnValue = Integer.parseInt(""+data.getValue());
-                        if(btnValue == 1){
-                            retornoLuz = true;
-                        }else {
-                            retornoLuz = false;
-                        }
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-
-        });
-        return retornoLuz;
-    }
-
-    public void mudaValorLuz (final int valor){
+       public void mudaValorLuz (final int valor){
         ControlLifeCicleApp.ligaLuz.child("ligaLuz").setValue(valor, new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
