@@ -13,6 +13,7 @@ public class ControlLifeCicleApp extends Application {
 
     public static DatabaseReference sensorLuz;
     public static DatabaseReference ligaLuz;
+    public static DatabaseReference sensorPorta;
 
 
     @Override
@@ -26,6 +27,8 @@ public class ControlLifeCicleApp extends Application {
         sensorLuz = database.getReference("sensor");
 
         ligaLuz = database.getReference("ligaLuz");
+
+        sensorPorta = database.getReference("sensorPorta");
 
 
         //pega o path tod mais o sensor que esta dentro da raiz

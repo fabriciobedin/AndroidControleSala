@@ -16,8 +16,10 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
     TextView txtSensorLuz;
     TextView txtSensorTemperatura;
+    TextView txtSensorPortaSala;
     ToggleButton btSensor1Luz;
     float lightValue = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         txtSensorLuz = (TextView) findViewById(R.id.txt_sensor_luz);
         txtSensorTemperatura = (TextView) findViewById(R.id.txt_sensor_temperatura);
+        txtSensorPortaSala = (TextView) findViewById(R.id.txt_sensor_porta_sala);
         btSensor1Luz = (ToggleButton) findViewById(R.id.bt_1_luz);
         btSensor1Luz.setTextOn("Ligada");
         btSensor1Luz.setTextOff("Desligada");
@@ -58,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 if(dataSnapshot.getChildrenCount()>0){
                     for(DataSnapshot data : dataSnapshot.getChildren()){
                         lightValue = Float.parseFloat(""+data.getValue());
-                        lightValue = lightValue*100;
                         if (lightValue > 26){
                             btSensor1Luz.setChecked(true);
                         }else{
@@ -86,9 +88,51 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+        //sensor porta sala --------------------------------------------------------------------------------------------------
+        ControlLifeCicleApp.sensorPorta.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if(dataSnapshot.getChildrenCount()>0){
+                    for(DataSnapshot data : dataSnapshot.getChildren()){
+                        Integer valorSensorPorta = 0;
+                        valorSensorPorta = Integer.parseInt(""+data.getValue());
+                        if(valorSensorPorta == 1){
+                            txtSensorPortaSala.setText("Porta Aberta!");
+                        } else{
+                            txtSensorPortaSala.setText("Porta Fechada!");
+                        }
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+
     }
 
-       public void mudaValorLuz (final int valor){
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
+
+
+
+    public void mudaValorLuz (final int valor){
         ControlLifeCicleApp.ligaLuz.child("ligaLuz").setValue(valor, new DatabaseReference.CompletionListener() {
             @Override
             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
