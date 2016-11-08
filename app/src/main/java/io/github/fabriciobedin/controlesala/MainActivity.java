@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     TextView txtSensorLuz;
     TextView txtSensorTemperatura;
     TextView txtSensorPortaSala;
+    TextView txtHorarioPortaAbriu;
+    TextView txtHorarioPortaFechou;
     ToggleButton btSensor1Luz;
     float lightValue = 0;
 
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         txtSensorLuz = (TextView) findViewById(R.id.txt_sensor_luz);
         txtSensorTemperatura = (TextView) findViewById(R.id.txt_sensor_temperatura);
         txtSensorPortaSala = (TextView) findViewById(R.id.txt_sensor_porta_sala);
+        txtHorarioPortaAbriu = (TextView) findViewById(R.id.txt_sensor_horario_porta_abriu);
+        txtHorarioPortaFechou = (TextView) findViewById(R.id.txt_sensor_horario_porta_fechou);
         btSensor1Luz = (ToggleButton) findViewById(R.id.bt_1_luz);
         btSensor1Luz.setTextOn("Ligada");
         btSensor1Luz.setTextOff("Desligada");
@@ -40,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
                 if(dataSnapshot.getChildrenCount()>0){
                     for(DataSnapshot data : dataSnapshot.getChildren()){
                         lightValue = Float.parseFloat(""+data.getValue());
-                        lightValue = lightValue*100;
                         txtSensorLuz.setText(""+lightValue);
                     }
                 }
@@ -104,17 +107,52 @@ public class MainActivity extends AppCompatActivity {
                         } else{
                             txtSensorPortaSala.setText("Porta Fechada!");
                         }
-
                     }
                 }
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
-
         });
+
+        ControlLifeCicleApp.horarioPortaAbriu.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if(dataSnapshot.getChildrenCount()>0){
+                    for(DataSnapshot data : dataSnapshot.getChildren()){
+                        String horarioPortaAbriu = null;
+                        horarioPortaAbriu = (""+data.getValue());
+                        txtHorarioPortaAbriu.setText(horarioPortaAbriu);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        ControlLifeCicleApp.horarioPortaFechou.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if(dataSnapshot.getChildrenCount()>0){
+                    for(DataSnapshot data : dataSnapshot.getChildren()){
+                        String horarioPortaFechou = null;
+                        horarioPortaFechou = (""+data.getValue());
+                        txtHorarioPortaFechou.setText(horarioPortaFechou);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+
+
+
+
 
     }
 

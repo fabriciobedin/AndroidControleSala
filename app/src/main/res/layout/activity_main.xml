@@ -317,7 +317,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/txt_sensor_5"
+                android:id="@+id/txt_sensor_horario_porta_abriu"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
@@ -338,7 +338,7 @@
 
             </LinearLayout>
             <TextView
-                android:id="@+id/txt_sensor_6"
+                android:id="@+id/txt_sensor_horario_porta_fechou"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"

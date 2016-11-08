@@ -15,12 +15,21 @@ var config = {
 //------------------------------------------------------------------------------------
 
 
- 
+
 //path do banco
 var rootRef = firebase.database().ref();
 
 var db = firebase.database();
 
+
+//data
+var data = new Date();
+var dia = data.getDate();
+var mes = data.getMonth();
+var ano = data.getYear();
+var hora = data.getHours();
+var min = data.getMinutes();
+var seg = data.getSeconds();
 
 
 
@@ -68,15 +77,25 @@ board.on("ready", function() {
 
   button.on("press", function() {
     console.log( "Porta Aberta" );
+    console.log( dia + "/" + mes +"/"+ ano + " - " + hora + ":" + min + ":" + seg );
     firebase.database().ref('sensorPorta').set({
-          porta : 1
+          porta : 1         
+    })
+
+    firebase.database().ref('horarioPortaAbriu').set({
+          dia : dia + "/" + mes +"/"+ ano + " - " + hora + ":" + min + ":" + seg          
     })
   });
 
   button.on("release", function() {
     console.log( "Porta Fechada" );
+    console.log( dia + "/" + mes +"/"+ ano + " - " + hora + ":" + min + ":" + seg );
     firebase.database().ref('sensorPorta').set({
           porta : 0
+    })
+
+    firebase.database().ref('horarioPortaFechou').set({
+          dia : dia + "/" + mes +"/"+ ano + " - " + hora + ":" + min + ":" + seg         
     })
   });
 
