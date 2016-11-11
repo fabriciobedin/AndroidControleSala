@@ -14,23 +14,13 @@ var config = {
   firebase.initializeApp(config);
 //------------------------------------------------------------------------------------
 
-
+//porta
+var keyPorta = 0;
 
 //path do banco
 var rootRef = firebase.database().ref();
 
 var db = firebase.database();
-
-
-//data
-var data = new Date();
-var dia = data.getDate();
-var mes = data.getMonth();
-var ano = data.getYear();
-var hora = data.getHours();
-var min = data.getMinutes();
-var seg = data.getSeconds();
-
 
 
 //jhonny five
@@ -75,27 +65,36 @@ board.on("ready", function() {
     invert: true
   });
 
+
   button.on("press", function() {
+    var data = new Date();
+    var horarioCompleto = data.getDate() + "/" + (data.getMonth()+1) +"/"+ data.getFullYear() + " - " + 
+                          data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
+    
     console.log( "Porta Aberta" );
-    console.log( dia + "/" + mes +"/"+ ano + " - " + hora + ":" + min + ":" + seg );
+    console.log( horarioCompleto );
     firebase.database().ref('sensorPorta').set({
           porta : 1         
     })
 
     firebase.database().ref('horarioPortaAbriu').set({
-          dia : dia + "/" + mes +"/"+ ano + " - " + hora + ":" + min + ":" + seg          
+          dia : horarioCompleto          
     })
   });
 
   button.on("release", function() {
+    var data = new Date();
+    var horarioCompleto = data.getDate() + "/" + (data.getMonth()+1) +"/"+ data.getFullYear() + " - " + 
+                          data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
+
     console.log( "Porta Fechada" );
-    console.log( dia + "/" + mes +"/"+ ano + " - " + hora + ":" + min + ":" + seg );
+    console.log( horarioCompleto );
     firebase.database().ref('sensorPorta').set({
           porta : 0
     })
 
     firebase.database().ref('horarioPortaFechou').set({
-          dia : dia + "/" + mes +"/"+ ano + " - " + hora + ":" + min + ":" + seg         
+          dia : horarioCompleto         
     })
   });
 
