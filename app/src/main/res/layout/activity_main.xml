@@ -562,7 +562,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                android:text="PC Fabricio"
+                android:text="Ventilador"
                 android:background="@null"
                 android:gravity="center"
                 android:textSize="@dimen/activity_texto_funcoes"

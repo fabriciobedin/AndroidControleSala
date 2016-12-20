@@ -14,9 +14,6 @@ var config = {
   firebase.initializeApp(config);
 //------------------------------------------------------------------------------------
 
-//porta
-var keyPorta = 0;
-
 //path do banco
 var rootRef = firebase.database().ref();
 
@@ -39,13 +36,12 @@ board.on("ready", function() {
 		if(valueLight != this.level){
 			valueLight = this.level*100;
       valueLight = parseInt(valueLight);
-      if (valueLight != (this.level+1) || valueLight != (this.level-1)) {
+      if (valueLight != (valueLight+1) || valueLight != (valueLight-1)) {
         console.log(valueLight);
         firebase.database().ref('sensor').set({
           light : valueLight
         })  
       }
-         
 		}
  	});
 
@@ -53,10 +49,11 @@ board.on("ready", function() {
   ref.orderByKey().on("child_changed", function(snapshot) {
     if (snapshot.val() == 1) {
       led.on();
+      console.log("Luz Ligada");
     } else{
       led.off();
+      console.log("Luz Desligada");
     }
-    console.log(snapshot.val());
   });
 
 
