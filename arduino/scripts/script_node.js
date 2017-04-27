@@ -65,7 +65,7 @@ board.on("ready", function() {
 
   button.on("press", function() {
     var data = new Date();
-    var horarioCompleto = data.getDate() + "/" + (data.getMonth()+1) +"/"+ data.getFullYear() + " - " + 
+    var horarioCompleto = data.getDate() + "/" + (data.getMonth()+1) +"/"+ data.getFullYear() + "  " + 
                           data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
     
     console.log( "Porta Aberta" );
@@ -81,7 +81,7 @@ board.on("ready", function() {
 
   button.on("release", function() {
     var data = new Date();
-    var horarioCompleto = data.getDate() + "/" + (data.getMonth()+1) +"/"+ data.getFullYear() + " - " + 
+    var horarioCompleto = data.getDate() + "/" + (data.getMonth()+1) +"/"+ data.getFullYear() + "  " + 
                           data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
 
     console.log( "Porta Fechada" );
@@ -93,6 +93,13 @@ board.on("ready", function() {
     firebase.database().ref('horarioPortaFechou').set({
           dia : horarioCompleto         
     })
+  });
+
+  new five.Thermometer({
+    pin: "A1",
+    toCelsius: function(raw) { // optional
+      return (raw / sensivity) + offset;
+    }
   });
 
  });

@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 if(dataSnapshot.getChildrenCount()>0){
                     for(DataSnapshot data : dataSnapshot.getChildren()){
                         lightValue = Float.parseFloat(""+data.getValue());
-                        if (lightValue > 26){
+                        if (lightValue > 55){
                             btSensor1Luz.setChecked(true);
                         }else{
                             btSensor1Luz.setChecked(false);
@@ -103,9 +103,9 @@ public class MainActivity extends AppCompatActivity {
                         Integer valorSensorPorta = 0;
                         valorSensorPorta = Integer.parseInt(""+data.getValue());
                         if(valorSensorPorta == 1){
-                            txtSensorPortaSala.setText("Porta Aberta!");
+                            txtSensorPortaSala.setText("Aberta!");
                         } else{
-                            txtSensorPortaSala.setText("Porta Fechada!");
+                            txtSensorPortaSala.setText("Fechada!");
                         }
                     }
                 }
