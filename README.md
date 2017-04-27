@@ -1,11 +1,14 @@
 # AndroidControleSala
-Aplicativo que controla um relé pra acender a luz da sala, sensor de luminosidade, sensor dht11 pra temperatura e umidade 
-e outros sensores que ainda estou adicionando, tudo com um Arduino UNO R3.
+Aplicativo que mostra informações de uns sensores conectadosa um Arduino UNO R3.
 
+### Print da tela do celular
 
 <div class="img1" align="center">
-  <img src="https://github.com/fabriciobedin/AndroidControleSala/blob/master/imagens/print_celular.jpg" width="350" height="*" al />
+  <img src="https://github.com/fabriciobedin/AndroidControleSala/blob/master/imagens/print_celular.jpg" width="280" height="*" al />
 </div>
+
+### Foto do Arduino Uno com os sensores e relé conectados
+
 <div class="img1" align="center">
-  <img src="https://github.com/fabriciobedin/AndroidControleSala/blob/master/imagens/montagem.jpg" width="600" height="*" al />
+  <img src="https://github.com/fabriciobedin/AndroidControleSala/blob/master/imagens/montagem.jpg" width="700" height="*" al />
 </div>
