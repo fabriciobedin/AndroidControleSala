@@ -7,3 +7,5 @@
 /build
 /captures
 .externalNativeBuild
+/arduino/scripts/node_modules
+/arduino/scripts/public
