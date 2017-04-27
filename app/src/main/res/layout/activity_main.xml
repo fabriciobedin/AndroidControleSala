@@ -115,7 +115,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                android:text=""
+                android:text="18ºC"
                 android:background="@null"
                 android:gravity="center"
                 android:textSize="@dimen/activity_texto_funcoes"
@@ -136,7 +136,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                android:text=""
+                android:text="43%"
                 android:background="@null"
                 android:gravity="center"
                 android:textSize="@dimen/activity_texto_funcoes"
@@ -181,7 +181,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                android:text="ºC"
+                android:text=""
                 android:background="@null"
                 android:gravity="center"
                 android:textSize="@dimen/activity_desc_sensor"
@@ -292,7 +292,7 @@
             android:id="@+id/llsensorl5"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.2"
+            android:layout_weight="0.3"
             android:orientation="horizontal">
 
             <TextView
@@ -359,7 +359,7 @@
             android:id="@+id/llsensorl6"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.2"
+            android:layout_weight="0.1"
             android:orientation="horizontal">
 
             <TextView

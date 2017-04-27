@@ -95,11 +95,5 @@ board.on("ready", function() {
     })
   });
 
-  new five.Thermometer({
-    pin: "A1",
-    toCelsius: function(raw) { // optional
-      return (raw / sensivity) + offset;
-    }
-  });
 
  });
